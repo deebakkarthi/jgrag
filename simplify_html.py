@@ -25,11 +25,11 @@ def main():
         action="store_true",
         help="Change inplace. Incompatible with -o and absent FILE",
     )
-    output_group.add_argument("-o", "--output", help="Defaults to STDOUT",
-                              default="/dev/stdout")
+    output_group.add_argument(
+        "-o", "--output", help="Defaults to STDOUT", default="/dev/stdout"
+    )
 
     args = parser.parse_args()
-
 
     if args.FILE == "/dev/stdin" and args.inplace:
         print(f"{PROGNAME}: Cannot inplace change STDIN", file=sys.stderr)
