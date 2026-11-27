@@ -16,9 +16,7 @@ def extract_main(soup: bs4.BeautifulSoup):
     main_content = soup.find_all("div", id="main-content")
     # These should always be singleton lists
     # But for the sake of completeness we're gonna iterate
-    return "".join([str(s) for s in main_header]) + "".join(
-        [str(s) for s in main_content]
-    )
+    return "".join([str(s) for s in main_header+main_content])
 
 
 def main():
